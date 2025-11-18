@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>同期会アルバムビューア</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <button id="home-button" type="button" class="home-button">🏠 Home</button>
+    <h1 class="app-title">杉並高校25期 同期会アルバム</h1>
+  </header>
+
+  <main>
+    <!-- 画面①：カテゴリ一覧 -->
+    <section id="screen-categories" class="screen active">
+      <h2 class="screen-title">カテゴリを選んでください</h2>
+      <div id="category-list" class="category-list">
+        <!-- JSでカテゴリカードを自動生成 -->
+      </div>
+    </section>
+
+    <!-- 画面②：サムネイル一覧（カテゴリ内） -->
+    <section id="screen-thumbnails" class="screen">
+      <div class="toolbar">
+        <button id="back-to-categories" type="button" class="back-button">
+          ← カテゴリ一覧へ戻る
+        </button>
+        <div class="toolbar-center">
+          <div id="category-title" class="toolbar-title"></div>
+          <div id="category-photo-count" class="toolbar-count"></div>
+        </div>
+      </div>
+
+      <div id="thumbnail-container" class="thumbnail-container">
+        <!-- JSでグループ名＋サムネイルグリッドを自動生成 -->
+      </div>
+    </section>
+
+    <!-- 画面③：1枚拡大表示 -->
+    <section id="screen-viewer" class="screen">
+      <div class="toolbar">
+        <button id="back-to-thumbnails" type="button" class="back-button">
+          ← 一覧に戻る
+        </button>
+        <div id="viewer-breadcrumb" class="toolbar-title"></div>
+      </div>
+
+      <div class="viewer-content">
+        <img id="viewer-image" src="" alt="" class="viewer-image" />
+        <div id="viewer-filename" class="viewer-filename"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 写真リスト定義 -->
+  <script src="photos_index.js"></script>
+  <!-- ビューア本体 -->
+  <script src="viewer.js"></script>
+</body>
+</html>
